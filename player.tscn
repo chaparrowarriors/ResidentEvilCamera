@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://1kr2yggmn8m2"]
+
+[ext_resource type="PackedScene" uid="uid://m038mgfwyans" path="res://models/polycat.dae" id="1_mh57t"]
+[ext_resource type="Script" path="res://player.gd" id="1_qhcu2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e8vcq"]
+radius = 0.336999
+height = 1.44528
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_qhcu2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.694044, 0)
+shape = SubResource("CapsuleShape3D_e8vcq")
+
+[node name="Graphics" parent="." instance=ExtResource("1_mh57t")]
+
+[node name="Skeleton3D" parent="Graphics/Armature" index="0"]
+bones/0/position = Vector3(0, 0.175415, -9.31323e-10)
+bones/1/position = Vector3(0, 3.72529e-09, -1.61465)
+bones/1/rotation = Quaternion(-0.0693216, -0.000669366, 0.0697531, 0.995153)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/position = Vector3(0.41611, 0.12854, 0.186777)
+bones/2/rotation = Quaternion(-0.00425743, 0.934867, 0.354794, -0.0112778)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/position = Vector3(-0.388168, 0.127661, 0.172132)
+bones/3/rotation = Quaternion(0.0177365, 0.911483, -0.410499, 0.0193683)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/position = Vector3(-0.0169323, -0.425221, 0.125134)
+bones/4/rotation = Quaternion(-0.448228, 0.30469, 0.00956225, 0.840336)
+bones/4/scale = Vector3(1, 1, 1)
+
+[editable path="Graphics"]
